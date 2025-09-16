@@ -10,12 +10,12 @@ export default function Home() {
     <p>Sharing ideas, tutorials and thoughts</p>
    </section>
    
-   <main>
+   <main className="p-8">
     <h3>Latest Posts</h3>
      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <BlogCard title="First Post" description="This is the description of the first post." date="2024-10-01"/>
-    <BlogCard title="Second Post" description="This is the description of the second post." date="2024-10-05"/>
-    <BlogCard title="Third Post" description="This is the description of the third post." date="2024-10-10"/>
+    <BlogCard title="First Post" description="This is the description of the first post." date="2024-10-01" slug="first-post"/>
+    <BlogCard title="Second Post" description="This is the description of the second post." date="2024-10-05" slug="second-post"/>
+    <BlogCard title="Third Post" description="This is the description of the third post." date="2024-10-10" slug="third-post"/>
     </div>
    </main>
 
