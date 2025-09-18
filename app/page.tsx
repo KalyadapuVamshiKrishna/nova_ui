@@ -7,10 +7,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
+
       <Navbar />
 
-      {/* Hero Section */}
+  
       <section className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-20 text-center shadow-md">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-5xl font-extrabold tracking-tight">
@@ -22,13 +22,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Posts */}
+     
       <main className="max-w-6xl mx-auto px-6 py-16">
         <h3 className="text-3xl font-bold mb-10 text-gray-800 border-b-4 border-indigo-500 inline-block">
           Latest Posts
         </h3>
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post: any) => (
+          {posts.map((post) => (
             <BlogCard
               key={post.slug}
               title={post.title}

@@ -32,6 +32,8 @@ export async function getPostBySlug(slug: string) {
   const contentHtml = processedContent.toString();
 
   return {
+    title: data.title, // Replace with actual title variable
+    date: data.date,   // Replace with actual date variable
     ...data,
     contentHtml,
   };
