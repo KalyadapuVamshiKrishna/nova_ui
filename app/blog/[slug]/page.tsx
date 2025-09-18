@@ -1,23 +1,21 @@
 import { notFound } from "next/navigation";
+import { getPostBySlug } from "../../../lib/posts";
 
-const posts=[
-    { slug: "first-post", title: "My First Post", content: "This is the content of my first post." },
-    { slug: "second-post", title: "My Second Post", content: "This is the content of my second post." },
-    { slug: "third-post", title: "My Third Post", content: "This is the content of my third post." },
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPostBySlug(params.slug);
 
-]
+  if (!post) return notFound();
 
+  return (
+    <div className="max-w-3xl mx-auto p-8">
+      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+      <p className="text-gray-400 mb-6">{post.date}</p>
 
-export default function BlogPost({params}:{params:{slug:string}}){
-    const post = posts.find(post=>post.slug === params.slug);
-
-    if(!post) return notFound();
-
-    return(
-        <div>
-            <h4>{post.title}</h4>
-            <p>{post.content}</p>
-            
-        </div>
-    )
+      {/* Render parsed Markdown as HTML */}
+      <div
+        className="prose prose-lg"
+        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+      />
+    </div>
+  );
 }

@@ -17,7 +17,6 @@ export default function BlogCard({title, description, date, slug}: BlogCardProps
         <span>{date}</span>
     </div>
     </Link>
-
     </>
     )
 }
